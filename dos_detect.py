@@ -33,8 +33,8 @@ def detect_dos():
 
         # Log and report if metrics exceed thresholds
         if bytes_sent > NETWORK_THRESHOLD or bytes_received > NETWORK_THRESHOLD:
-            print(f"[!] High network activity detected: Sent: {bytes_sent} bytes, Received: {bytes_received} bytes")
-            logging.warning("[!] High network activity detected: Sent: %d bytes, Received: %d bytes", bytes_sent, bytes_received)
+            print(f"[!] High network activity detected: Sent: {bytes_sent} bytes, Received: {bytes_received} bytes -- possibly a false positive")
+            logging.warning("[!] High network activity detected: Sent: %d bytes, Received: %d bytes -- possibly a false positive", bytes_sent, bytes_received)
 
         if cpu_usage > CPU_THRESHOLD:
             print(f"[!] High CPU usage detected: {cpu_usage}%")
